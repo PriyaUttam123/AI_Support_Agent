@@ -105,12 +105,28 @@ AI_Support_Agent/
 
 ---
 
-## 🚀 Execution & Implementation Roadmap
-1. **Phase 1: Environment & Scaffolding** *(Current)*: Project skeleton, directory structure, and foundational configuration.
-2. **Phase 2: Brand Exploration & Intent Schema**: Analyze candidate brands, select target brand, define grounded intent taxonomy.
-3. **Phase 3: Data Ingestion & Thread Pairing**: Filter dataset, reconstruct customer-agent conversation turns, build training/retrieval corpora.
-4. **Phase 4: Golden Evaluation Benchmark**: Curate and manually label 150–250 representative examples with ground-truth intent, escalation decision, and resolution.
-5. **Phase 5: Baselines**: Implement trivial and simple benchmark models.
-6. **Phase 6: Core Pipeline**: Implement classification, retrieval-augmented resolution, generation, and escalation routing.
-7. **Phase 7: Evaluation Harness & LLM-as-Judge**: Build automated evaluation pipeline, measure human agreement, and run head-to-head benchmarking.
-8. **Phase 8: Failure Analysis & Decision Log**: Document failure modes, dissect misleading metrics, and finalize documentation for <15 minute reproduction.
+## 🎯 Target Brand Selection: AppleSupport
+
+### Why AppleSupport Was Selected
+Following extensive chunked profiling across all 108 brands in the Twitter Customer Support dataset (`reports/dataset_profile.md`), **AppleSupport** was selected as the optimal target brand for the following reasons:
+1. **Balanced Escalation Boundary**: Unlike telecom carriers with >80% DM deflection (deflecting before troubleshooting) or platforms with <1% DM deflection, AppleSupport displays a balanced split: ~46.5% direct escalation (account/hardware/DM) vs. ~53.5% public diagnostic assistance/troubleshooting. This provides an ideal ground-truth distribution for training and evaluating auto-handle vs. escalation policies.
+2. **Actionable Diagnostic Content**: Responses frequently include concrete diagnostic guidance (Settings navigation paths, restart sequences, update verification) and official support links (75.4% URL presence).
+3. **High Volume & Clean English Text**: 236,738 extracted tweets across 80,749 conversation threads, with 100.0% English/ASCII language consistency.
+4. **Distinct Natural Technical Intents**: Issues naturally cluster into well-defined domains (Battery & Power, iOS Updates, App Crashes, Apple ID / Security, Hardware / Display, Connectivity).
+
+### How to Reproduce Extraction
+The AppleSupport conversation extraction pipeline is fully automated and deterministic:
+```powershell
+python src/data/extract_apple_support.py
+```
+This script:
+1. Filters outbound tweets from `author_id == "AppleSupport"` and traverses the conversation graph in `data/raw/twcs/twcs.csv` to capture all parent queries and follow-up turns.
+2. Reconstructs full conversation threads and exports `data/processed/apple_support/tweets.csv` and `data/processed/apple_support/conversations.jsonl`.
+3. Extracts clean customer $\to$ AppleSupport support pairs into `data/processed/apple_support/support_pairs.csv` with rich metadata (response delay, DM flags, URL presence, actionable keywords).
+4. Generates a reproducible 250-pair manual inspection sample at `data/evaluation/apple_support_manual_sample.csv` (random seed `42`).
+
+### Run Data Integrity Tests
+```powershell
+python -m unittest tests/test_apple_support_data.py
+```
+

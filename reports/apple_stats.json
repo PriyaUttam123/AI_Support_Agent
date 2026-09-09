@@ -1,0 +1,265 @@
+{
+  "total_tweets": 236738,
+  "outbound_apple": 106860,
+  "inbound_cust": 129722,
+  "other_tweets": 156,
+  "unique_customers": 79392,
+  "total_conversations": 80749,
+  "mean_len": 2.93,
+  "median_len": 2.0,
+  "std_len": 2.57,
+  "min_len": 2,
+  "max_len": 282,
+  "length_breakdown": {
+    "1 turn (unanswered/single)": 0,
+    "2 turns (single Q&A pair)": 52573,
+    "3 turns": 8036,
+    "4 turns": 10998,
+    "5+ turns (extended dialogue)": 9142
+  },
+  "clean_pairs": 106646,
+  "unique_customers_in_pairs": 76365,
+  "avg_turn_delay_min": 147.3,
+  "median_turn_delay_min": 71.0,
+  "has_url_cnt": 80383,
+  "has_url_pct": 75.37,
+  "req_dm_cnt": 56046,
+  "req_dm_pct": 52.55,
+  "genius_cnt": 221,
+  "genius_pct": 0.21,
+  "troubleshoot_cnt": 24737,
+  "troubleshoot_pct": 23.2,
+  "response_categories": {
+    "Immediate Escalation (DM / Store Referral)": 49581,
+    "Pure Troubleshooting (Self-Serve Instructions)": 18161,
+    "General Inquiry / Clarification Question": 17294,
+    "Documentation / URL Only": 15034,
+    "Troubleshooting + Escalation (Conditional Deflection)": 6576
+  },
+  "top_unigrams": [
+    [
+      "user",
+      47663
+    ],
+    [
+      "phone",
+      22025
+    ],
+    [
+      "iphone",
+      20399
+    ],
+    [
+      "ios",
+      16132
+    ],
+    [
+      "update",
+      15895
+    ],
+    [
+      "fix",
+      14517
+    ],
+    [
+      "battery",
+      8529
+    ],
+    [
+      "now",
+      8166
+    ],
+    [
+      "just",
+      8091
+    ],
+    [
+      "since",
+      5970
+    ],
+    [
+      "still",
+      5186
+    ],
+    [
+      "app",
+      5155
+    ],
+    [
+      "like",
+      4965
+    ],
+    [
+      "time",
+      4943
+    ],
+    [
+      "updated",
+      4858
+    ],
+    [
+      "screen",
+      4508
+    ],
+    [
+      "shit",
+      4247
+    ],
+    [
+      "apps",
+      4185
+    ],
+    [
+      "work",
+      4149
+    ],
+    [
+      "issue",
+      4048
+    ]
+  ],
+  "top_bigrams": [
+    [
+      "user user",
+      4525
+    ],
+    [
+      "user fix",
+      3260
+    ],
+    [
+      "ios update",
+      2211
+    ],
+    [
+      "battery life",
+      1746
+    ],
+    [
+      "hey user",
+      1578
+    ],
+    [
+      "iphone plus",
+      1574
+    ],
+    [
+      "every time",
+      1538
+    ],
+    [
+      "question mark",
+      1511
+    ],
+    [
+      "ever since",
+      1241
+    ],
+    [
+      "user iphone",
+      1146
+    ],
+    [
+      "updated phone",
+      1141
+    ],
+    [
+      "doesn work",
+      1054
+    ],
+    [
+      "user update",
+      1045
+    ],
+    [
+      "fix shit",
+      1044
+    ],
+    [
+      "update phone",
+      1012
+    ],
+    [
+      "user ios",
+      965
+    ],
+    [
+      "since updated",
+      922
+    ],
+    [
+      "since update",
+      897
+    ],
+    [
+      "iphone ios",
+      883
+    ],
+    [
+      "high sierra",
+      879
+    ]
+  ],
+  "top_trigrams": [
+    [
+      "user user user",
+      916
+    ],
+    [
+      "ever since updated",
+      414
+    ],
+    [
+      "question mark box",
+      408
+    ],
+    [
+      "user fix shit",
+      392
+    ],
+    [
+      "every time type",
+      319
+    ],
+    [
+      "user need fix",
+      262
+    ],
+    [
+      "latest ios update",
+      261
+    ],
+    [
+      "since updated phone",
+      250
+    ],
+    [
+      "since updated ios",
+      248
+    ],
+    [
+      "since ios update",
+      240
+    ],
+    [
+      "user shit together",
+      237
+    ],
+    [
+      "user ios update",
+      231
+    ],
+    [
+      "user going fix",
+      230
+    ],
+    [
+      "phone keeps freezing",
+      220
+    ],
+    [
+      "hey user fix",
+      205
+    ]
+  ]
+}

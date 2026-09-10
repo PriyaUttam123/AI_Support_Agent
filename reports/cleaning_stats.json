@@ -1,0 +1,58 @@
+{
+  "total_raw_pairs": 106646,
+  "clean_pairs_count": 105739,
+  "flagged_pairs_count": 907,
+  "flag_breakdown": {
+    "valid": 105739,
+    "url_or_mention_only_customer": 707,
+    "ultra_short_customer_message": 177,
+    "duplicate_customer_turn": 23
+  },
+  "response_type_distribution": {
+    "Immediate Escalation": 49124,
+    "Pure Troubleshooting": 18004,
+    "General Inquiry / Clarification": 17156,
+    "Documentation / Help Article URL": 14919,
+    "Troubleshooting + Escalation": 6536
+  },
+  "total_clean_convs": 80330,
+  "golden_convs_protected": 249,
+  "split_conversations": {
+    "train": 56231,
+    "validation": 12050,
+    "test": 12049
+  },
+  "split_support_pairs": {
+    "train": 73700,
+    "validation": 15741,
+    "test": 16298
+  },
+  "split_tweets": {
+    "train": 164135,
+    "validation": 35055,
+    "test": 36362
+  },
+  "retrieval_corpus_size": 73700,
+  "temporal_analysis": {
+    "earliest_timestamp": "2016-03-04 20:44:00",
+    "latest_timestamp": "2017-12-03 23:12:28",
+    "yearly_distribution": {
+      "2016": 7,
+      "2017": 105732
+    },
+    "monthly_2017": {
+      "1": 8,
+      "2": 3,
+      "3": 4,
+      "4": 6,
+      "5": 6,
+      "6": 2,
+      "7": 3,
+      "8": 11,
+      "9": 126,
+      "10": 42650,
+      "11": 58251,
+      "12": 4662
+    }
+  }
+}

@@ -130,3 +130,33 @@ This script:
 python -m unittest tests/test_apple_support_data.py
 ```
 
+---
+
+## 🧹 Data Cleaning, Quality Filtering & Leakage-Safe Splitting (Phase 4)
+
+### Data Cleaning & Normalization
+* **Conservative Normalization**: Original customer and response texts are strictly preserved intact in `customer_text` and `response_text`. Normalized columns standardize whitespace (`\s+`), convert synthetic numeric handles (`@123456` $\to$ `@user`), and strip agent initials (`/LS`, `^HP`), while preserving technical terms, product models (`iPhone 6s`), and iOS versions.
+* **Transparent Quality Filtering**: Evaluated raw support pairs and flagged 907 unusable rows (707 empty/URL-only customer messages, 177 ultra-short messages <3 characters, 23 duplicate turns), yielding **105,739 clean support pairs** in `data/processed/apple_support/support_pairs_clean.csv`.
+
+### Conversation-Level Splitting
+* **Why Conversation-Level Splitting is Critical**: Splitting randomly by individual support pairs causes severe data leakage when multiple turns of the same customer thread appear in both training and test sets. Splitting strictly by `conversation_id` guarantees that complete conversational trees remain isolated.
+* **Splits Created**:
+  * **Train**: 56,231 conversations (70.0%) | 73,700 support pairs | 164,135 tweets
+  * **Validation**: 12,050 conversations (15.0%) | 15,741 support pairs | 35,055 tweets
+  * **Test**: 12,049 conversations (15.0%) | 16,298 support pairs | 36,362 tweets
+
+### Retrieval Isolation & Golden-Set Protection
+* **Retrieval Knowledge Base**: `data/processed/apple_support/retrieval/retrieval_train.csv` (73,700 pairs) is constructed strictly from `train.csv`. Validation and test conversations are 100% excluded to prevent retrieval memorization.
+* **Golden-Set Protection**: All conversations present in the 250-example manual evaluation sample (`data/evaluation/apple_support_manual_sample.csv`) are forcibly assigned to the test split, guaranteeing zero presence in training or retrieval.
+
+### How to Reproduce Cleaning & Splitting
+```powershell
+python src/preprocessing/clean_and_split.py
+```
+
+### Run Leakage and Split Validation Tests
+```powershell
+python -m unittest tests/test_data_cleaning_and_splits.py
+```
+
+

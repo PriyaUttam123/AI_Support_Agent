@@ -1,0 +1,71 @@
+{
+  "train": {
+    "total": 73700,
+    "distribution": {
+      "general_inquiry_other": 30647,
+      "software_update": 12902,
+      "battery_power": 7376,
+      "performance_system": 7057,
+      "hardware_audio_display": 5410,
+      "account_billing": 3860,
+      "keyboard_typing": 3781,
+      "connectivity_network": 2667
+    },
+    "percentages": {
+      "general_inquiry_other": 41.58,
+      "software_update": 17.51,
+      "battery_power": 10.01,
+      "performance_system": 9.58,
+      "hardware_audio_display": 7.34,
+      "account_billing": 5.24,
+      "keyboard_typing": 5.13,
+      "connectivity_network": 3.62
+    }
+  },
+  "validation": {
+    "total": 15741,
+    "distribution": {
+      "general_inquiry_other": 6419,
+      "software_update": 2736,
+      "battery_power": 1583,
+      "performance_system": 1546,
+      "hardware_audio_display": 1207,
+      "account_billing": 861,
+      "keyboard_typing": 798,
+      "connectivity_network": 591
+    },
+    "percentages": {
+      "general_inquiry_other": 40.78,
+      "software_update": 17.38,
+      "battery_power": 10.06,
+      "performance_system": 9.82,
+      "hardware_audio_display": 7.67,
+      "account_billing": 5.47,
+      "keyboard_typing": 5.07,
+      "connectivity_network": 3.75
+    }
+  },
+  "test": {
+    "total": 16298,
+    "distribution": {
+      "general_inquiry_other": 6632,
+      "software_update": 2978,
+      "battery_power": 1620,
+      "performance_system": 1542,
+      "hardware_audio_display": 1222,
+      "account_billing": 845,
+      "keyboard_typing": 829,
+      "connectivity_network": 630
+    },
+    "percentages": {
+      "general_inquiry_other": 40.69,
+      "software_update": 18.27,
+      "battery_power": 9.94,
+      "performance_system": 9.46,
+      "hardware_audio_display": 7.5,
+      "account_billing": 5.18,
+      "keyboard_typing": 5.09,
+      "connectivity_network": 3.87
+    }
+  }
+}

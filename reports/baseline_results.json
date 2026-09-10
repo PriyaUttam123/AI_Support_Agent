@@ -1,0 +1,288 @@
+{
+  "test_set": "data\\processed\\apple_support\\intent\\test_intents.csv",
+  "test_size": 16298,
+  "labels": [
+    "general_inquiry_other",
+    "software_update",
+    "battery_power",
+    "performance_system",
+    "hardware_audio_display",
+    "account_billing",
+    "keyboard_typing",
+    "connectivity_network"
+  ],
+  "majority_baseline": {
+    "accuracy": 0.4069,
+    "macro_f1": 0.0723,
+    "weighted_f1": 0.2354,
+    "per_class": {
+      "general_inquiry_other": {
+        "precision": 0.4069,
+        "recall": 1.0,
+        "f1": 0.5785,
+        "support": 6632
+      },
+      "software_update": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2978
+      },
+      "battery_power": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1620
+      },
+      "performance_system": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1542
+      },
+      "hardware_audio_display": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1222
+      },
+      "account_billing": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 845
+      },
+      "keyboard_typing": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 829
+      },
+      "connectivity_network": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 630
+      }
+    },
+    "confusion_matrix": [
+      [
+        6632,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2978,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1620,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1542,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1222,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        845,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        829,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        630,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "rule_based": {
+    "accuracy": 0.9593,
+    "macro_f1": 0.9548,
+    "weighted_f1": 0.9561,
+    "per_class": {
+      "general_inquiry_other": {
+        "precision": 0.9411,
+        "recall": 1.0,
+        "f1": 0.9697,
+        "support": 6632
+      },
+      "software_update": {
+        "precision": 0.928,
+        "recall": 1.0,
+        "f1": 0.9627,
+        "support": 2978
+      },
+      "battery_power": {
+        "precision": 1.0,
+        "recall": 0.9889,
+        "f1": 0.9944,
+        "support": 1620
+      },
+      "performance_system": {
+        "precision": 0.9959,
+        "recall": 0.6375,
+        "f1": 0.7774,
+        "support": 1542
+      },
+      "hardware_audio_display": {
+        "precision": 0.9911,
+        "recall": 1.0,
+        "f1": 0.9955,
+        "support": 1222
+      },
+      "account_billing": {
+        "precision": 1.0,
+        "recall": 0.9467,
+        "f1": 0.9726,
+        "support": 845
+      },
+      "keyboard_typing": {
+        "precision": 1.0,
+        "recall": 0.994,
+        "f1": 0.997,
+        "support": 829
+      },
+      "connectivity_network": {
+        "precision": 0.9966,
+        "recall": 0.9429,
+        "f1": 0.969,
+        "support": 630
+      }
+    },
+    "confusion_matrix": [
+      [
+        6632,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2978,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        9,
+        4,
+        1602,
+        0,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        356,
+        203,
+        0,
+        983,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1222,
+        0,
+        0,
+        0
+      ],
+      [
+        26,
+        11,
+        0,
+        1,
+        5,
+        800,
+        0,
+        2
+      ],
+      [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        824,
+        0
+      ],
+      [
+        19,
+        13,
+        0,
+        3,
+        1,
+        0,
+        0,
+        594
+      ]
+    ]
+  }
+}

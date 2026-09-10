@@ -1,0 +1,82 @@
+{
+  "battery_power": {
+    "description": "Battery drain, rapid discharge, power management, charging failure, or unexpected shutdowns.",
+    "in_scope": "Battery health, charging cables, fast drain, phone dying above 1%, overheating while charging.",
+    "out_of_scope": "General phone slowness or app freezing without battery mention.",
+    "confusable_intents": [
+      "performance_system",
+      "software_update"
+    ],
+    "decision_boundary": "Classify as battery_power if battery life, drain, or charging is explicitly mentioned."
+  },
+  "software_update": {
+    "description": "Issues installing, downloading, verifying, or rolling back iOS/macOS updates or iTunes backup/restore.",
+    "in_scope": "Update verification hang, installation errors, iTunes update errors, release inquiries, reverting update.",
+    "out_of_scope": "Specific bugs caused by an update (e.g. battery drain or keyboard glitch).",
+    "confusable_intents": [
+      "battery_power",
+      "performance_system",
+      "keyboard_typing"
+    ],
+    "decision_boundary": "If customer asks how/when to update, or update failed to install/download, classify as software_update."
+  },
+  "performance_system": {
+    "description": "System sluggishness, freezing touchscreen, app crashes, unexpected lag, or unresponsiveness.",
+    "in_scope": "Apps closing spontaneously, touchscreen freezing, slow typing/navigation, spinning wheel.",
+    "out_of_scope": "Physical screen cracking, pure battery drain, or keyboard autocorrect letter substitution.",
+    "confusable_intents": [
+      "software_update",
+      "hardware_audio_display",
+      "keyboard_typing"
+    ],
+    "decision_boundary": "Classify as performance_system when the primary complaint is software unresponsiveness, freezing, or app crashes."
+  },
+  "keyboard_typing": {
+    "description": "Autocorrect bugs (letter i becoming question mark box), keyboard lag, predictive text or dictation failures.",
+    "in_scope": "Question mark box bug, keyboard freezing/lag, predictive emoji issues, autocorrect capitalization glitches.",
+    "out_of_scope": "General app freezing outside of text entry.",
+    "confusable_intents": [
+      "performance_system",
+      "software_update"
+    ],
+    "decision_boundary": "Specific to text entry, keyboard responsiveness, predictive text, and autocorrect anomalies."
+  },
+  "account_billing": {
+    "description": "Apple ID credentials, iCloud storage/sync, passwords, App Store purchases, and subscription charges.",
+    "in_scope": "Password resets, 2FA codes, account lockout, subscription cancellations, refund requests, iCloud full warnings.",
+    "out_of_scope": "Hardware or device connectivity issues.",
+    "confusable_intents": [
+      "general_inquiry_other"
+    ],
+    "decision_boundary": "Involves personal credentials, Apple ID authentication, or financial/subscription transactions."
+  },
+  "hardware_audio_display": {
+    "description": "Physical hardware damage, cracked display, black screen, camera failure, microphone, speaker, or headphone issues.",
+    "in_scope": "Broken glass, OLED lines, camera black screen, distorted speaker sound, mic not working, headphone dongle defect.",
+    "out_of_scope": "Software touchscreen lag without physical damage.",
+    "confusable_intents": [
+      "performance_system"
+    ],
+    "decision_boundary": "Classify here if physical components (screen, camera, speaker, mic, buttons, audio ports) fail or are damaged."
+  },
+  "connectivity_network": {
+    "description": "Wi-Fi disconnects, Bluetooth pairing failures, cellular signal drops, No Service errors, or carrier data.",
+    "in_scope": "Cannot join Wi-Fi, grayed out toggle, Bluetooth dropouts, dropped cellular calls, No Service, Hotspot.",
+    "out_of_scope": "App Store download speed issues without network disconnection.",
+    "confusable_intents": [
+      "hardware_audio_display",
+      "general_inquiry_other"
+    ],
+    "decision_boundary": "Involves wireless protocols (Wi-Fi, Bluetooth, Cellular, AirDrop) or cellular carrier network access."
+  },
+  "general_inquiry_other": {
+    "description": "General inquiries, store hours, reservations, courtesy messages, mid-thread confirmations, or conversational follow-ups.",
+    "in_scope": "Pre-order inquiries, store location questions, courtesy (\"thanks\", \"done\"), short answers (\"yes\", \"iPhone 7\"), unspecific complaints.",
+    "out_of_scope": "Inquiries with specific technical or account failure symptoms.",
+    "confusable_intents": [
+      "account_billing",
+      "software_update"
+    ],
+    "decision_boundary": "Fallback class for generic inquiries, social acknowledgements, or messages lacking specific technical domain symptoms."
+  }
+}

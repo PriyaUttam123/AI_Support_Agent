@@ -1,0 +1,181 @@
+{
+  "model": "Embedding-Based Centroid Classifier",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "train_set": "data\\processed\\apple_support\\intent\\train_intents.csv",
+  "test_set": "data\\processed\\apple_support\\intent\\test_intents.csv",
+  "train_size": 73700,
+  "test_size": 16298,
+  "labels": [
+    "general_inquiry_other",
+    "software_update",
+    "battery_power",
+    "performance_system",
+    "hardware_audio_display",
+    "account_billing",
+    "keyboard_typing",
+    "connectivity_network"
+  ],
+  "intent_counts": {
+    "general_inquiry_other": 30647,
+    "software_update": 12902,
+    "battery_power": 7376,
+    "performance_system": 7057,
+    "hardware_audio_display": 5410,
+    "account_billing": 3860,
+    "keyboard_typing": 3781,
+    "connectivity_network": 2667
+  },
+  "classification_method": "Cosine similarity to intent centroids",
+  "metrics": {
+    "accuracy": 0.6311,
+    "macro_precision": 0.5902,
+    "macro_recall": 0.7051,
+    "macro_f1": 0.6205,
+    "weighted_precision": 0.698,
+    "weighted_recall": 0.6311,
+    "weighted_f1": 0.6405,
+    "per_class": {
+      "general_inquiry_other": {
+        "precision": 0.8398,
+        "recall": 0.5375,
+        "f1": 0.6555,
+        "support": 6632
+      },
+      "software_update": {
+        "precision": 0.6894,
+        "recall": 0.5776,
+        "f1": 0.6285,
+        "support": 2978
+      },
+      "battery_power": {
+        "precision": 0.8309,
+        "recall": 0.8673,
+        "f1": 0.8487,
+        "support": 1620
+      },
+      "performance_system": {
+        "precision": 0.5236,
+        "recall": 0.6109,
+        "f1": 0.5639,
+        "support": 1542
+      },
+      "hardware_audio_display": {
+        "precision": 0.4754,
+        "recall": 0.6882,
+        "f1": 0.5624,
+        "support": 1222
+      },
+      "account_billing": {
+        "precision": 0.4217,
+        "recall": 0.755,
+        "f1": 0.5411,
+        "support": 845
+      },
+      "keyboard_typing": {
+        "precision": 0.3484,
+        "recall": 0.8203,
+        "f1": 0.489,
+        "support": 829
+      },
+      "connectivity_network": {
+        "precision": 0.5923,
+        "recall": 0.7841,
+        "f1": 0.6749,
+        "support": 630
+      }
+    },
+    "confusion_matrix": [
+      [
+        3565,
+        376,
+        179,
+        332,
+        558,
+        566,
+        873,
+        183
+      ],
+      [
+        303,
+        1720,
+        37,
+        265,
+        179,
+        218,
+        186,
+        70
+      ],
+      [
+        24,
+        33,
+        1405,
+        54,
+        39,
+        33,
+        1,
+        31
+      ],
+      [
+        128,
+        161,
+        15,
+        942,
+        77,
+        14,
+        196,
+        9
+      ],
+      [
+        110,
+        86,
+        10,
+        110,
+        841,
+        28,
+        13,
+        24
+      ],
+      [
+        55,
+        54,
+        30,
+        14,
+        31,
+        638,
+        2,
+        21
+      ],
+      [
+        32,
+        36,
+        13,
+        48,
+        15,
+        3,
+        680,
+        2
+      ],
+      [
+        28,
+        29,
+        2,
+        34,
+        29,
+        13,
+        1,
+        494
+      ]
+    ]
+  },
+  "confidence_stats": {
+    "mean": 0.6154565215110779,
+    "median": 0.6294768452644348,
+    "std": 0.13024461269378662,
+    "min": 0.04511865973472595,
+    "max": 0.9022972583770752,
+    "p25": 0.5339558124542236,
+    "p75": 0.7143534421920776
+  },
+  "execution_time_seconds": 2604.46
+}

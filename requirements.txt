@@ -13,3 +13,6 @@ pyyaml>=6.0.0
 # Utilities and testing
 tqdm>=4.65.0
 pytest>=7.4.0
+
+# Embeddings for semantic classification
+sentence-transformers>=2.2.0

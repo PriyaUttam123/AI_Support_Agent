@@ -1,0 +1,9 @@
+true \ predicted,general_inquiry_other,software_update,battery_power,performance_system,hardware_audio_display,account_billing,keyboard_typing,connectivity_network
+general_inquiry_other,6417,10,5,0,1,28,159,12
+software_update,22,2905,3,2,0,12,32,2
+battery_power,11,17,1540,8,19,12,0,13
+performance_system,18,27,2,1474,1,0,20,0
+hardware_audio_display,21,11,0,15,1168,4,1,2
+account_billing,8,11,0,11,12,791,0,12
+keyboard_typing,17,13,7,14,4,2,771,1
+connectivity_network,6,9,0,11,13,0,0,591
